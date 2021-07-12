@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
 import {useQuery} from 'react-query'
+import { v4 as uuidv4 } from 'uuid'
 
 const EditUser = () => {
   let history = useHistory();
   const { id } = useParams();
   const [user, setUser] = useState({
+    id: uuidv4(),
     name: "",
     username: "",
     email: "",
